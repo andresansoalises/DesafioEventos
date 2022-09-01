@@ -94,12 +94,20 @@ function mostrarCarro() {
 function agregar(id) {
   const encontrarProducto = productos.find((item) => item.id == id);
   carrito.push(encontrarProducto);
+  guardarLocalStorage(encontrarProducto);
+  let productosRecuperados = localStorage.getItem("productosJSON");
+  productosRecuperados = JSON.parse(productosRecuperados);
   mostrarCarro();
 }
 
 function eliminar(id) {
   carrito.splice(id, 1);
   mostrarCarro();
+}
+
+function guardarLocalStorage(carrito) {
+  let productosJSON = JSON.stringify(carrito);
+  localStorage.setItem("productosJSON", productosJSON);
 }
 
 mostrarProductos();
