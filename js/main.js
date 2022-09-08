@@ -94,20 +94,30 @@ function mostrarCarro() {
 function agregar(id) {
   const encontrarProducto = productos.find((item) => item.id == id);
   carrito.push(encontrarProducto);
-  guardarLocalStorage(encontrarProducto);
-  let productosRecuperados = localStorage.getItem("productosJSON");
-  productosRecuperados = JSON.parse(productosRecuperados);
+  Swal.fire({
+    icon: "success",
+    title: "Producto agregado al carro",
+    showConfirmButton: false,
+    timer: 1500,
+  });
   mostrarCarro();
 }
 
 function eliminar(id) {
-  carrito.splice(id, 1);
-  mostrarCarro();
-}
-
-function guardarLocalStorage(carrito) {
-  let productosJSON = JSON.stringify(carrito);
-  localStorage.setItem("productosJSON", productosJSON);
+  Swal.fire({
+    title: "¿Está seguro?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Sí",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire("Eliminado!");
+      carrito.splice(id, 1);
+      mostrarCarro();
+    }
+  });
 }
 
 mostrarProductos();
