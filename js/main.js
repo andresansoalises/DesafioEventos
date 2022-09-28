@@ -5,16 +5,16 @@ function mostrarProductos() {
       let html = "";
       json.forEach((productos) => {
         html += `
-          <div class="card" style="width: 18rem;">
-        <img src="${productos.img}" class="card-img-top" alt="...">
-       <div class="card-body">
-         <h5 class="card-title">${productos.nombre}</h5>
-         <p class="card-text">Marca: ${productos.marca}</p>
-         <p class="card-text"> Categoria: ${productos.categoria}</p>
-         <p class="card-text"> Precio: ${productos.precio}</p>
-         <a href="#" class="btn btn-primary" onclick="agregar(${productos.id});">Agregar</a>
-       </div>
-      </div> `;
+          <div class="card text-center m-1" style="width: 18rem;">
+            <img src="${productos.img}" class="card-img-top" alt="...">
+             <div class="card-body">
+              <h5 class="card-title">${productos.nombre}</h5>
+              <p class="card-text">Marca: ${productos.marca}</p>
+              <p class="card-text"> Categoria: ${productos.categoria}</p>
+              <p class="card-text"> Precio: ${productos.precio}</p>
+              <a href="#" class="btn btn-primary" onclick="agregar(${productos.id});">Agregar</a>
+             </div>
+       </div> `;
       });
       document.getElementById("productos").innerHTML = html;
     });
@@ -27,7 +27,7 @@ function mostrarCarro() {
   for (let i = 0; i < carrito.length; i++) {
     html =
       html +
-      `<div class="card" style="width: 18rem;">
+      `<div class="card text-center" style="width: 18rem;">
         <img src="${carrito[i].img}" class="card-img-top" alt="...">
        <div class="card-body">
          <h5 class="card-title">${carrito[i].nombre}</h5>
@@ -74,3 +74,11 @@ function eliminar(id) {
 }
 
 mostrarProductos();
+
+/*/Carrito ventana*/
+
+let cerrarCarrito = document.querySelectorAll("cerrarCarrito");
+
+cerrarCarrito.onclink = () => {
+  cerrarCarrito.remove("active");
+};
