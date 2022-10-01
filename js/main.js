@@ -39,7 +39,7 @@ function mostrarCarro() {
   }
   document.getElementById("carrito").innerHTML = html;
 }
-
+/*-------sweet alert---------*/
 function agregar(id) {
   fetch("../js/data.json")
     .then((res) => res.json())
@@ -72,7 +72,7 @@ function eliminar(id) {
     }
   });
 }
-
+/*----------------*/
 mostrarProductos();
 
 /*/Carrito ventana*/
