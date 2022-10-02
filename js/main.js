@@ -27,18 +27,42 @@ function mostrarCarro() {
   for (let i = 0; i < carrito.length; i++) {
     html =
       html +
-      `<div class="card text-center" style="width: 18rem;">
-        <img src="${carrito[i].img}" class="card-img-top" alt="...">
-       <div class="card-body">
-         <h5 class="card-title">${carrito[i].nombre}</h5>
-         <p class="card-text">Marca: ${carrito[i].marca}</p>
-         <p class="card-text"> Categoria: ${carrito[i].categoria}</p>
-         <p class="card-text"> Precio: ${carrito[i].precio}</p>
-         <a href="#" class="btn btn-danger" onclick="eliminar(${i});">Eliminar</a>
+      `<div class="card mb-3">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <div class="d-flex flex-row align-items-center">
+            <div>
+              <img
+                src="${carrito[i].img}"
+                class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+            </div>
+            <div class="ms-3">
+              <h5>${carrito[i].nombre}</h5>
+              <p class="small mb-0">Marca: ${carrito[i].marca},  Categoria: ${carrito[i].categoria}</p>
+            </div>
+          </div>
+          <div class="d-flex flex-row align-items-center">
+            <div style="width: 50px;">
+              <h5 class="fw-normal mb-0">2</h5>
+            </div>
+            <div style="width: 80px;">
+              <h5 class="mb-0"> Precio: ${carrito[i].precio}</h5>
+            </div>
+            <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt" onclick="eliminar(${i});""></i></a>
+          </div>
+        </div>
+      </div>
     </div>`;
   }
   document.getElementById("carrito").innerHTML = html;
+  document.getElementById("valor").innerHTML = carrito.length;
+  document.getElementById("subtotal").innerHTML = carrito.reduce(
+    (acc, i) => acc + i.precio,
+    0
+  );
+  document.getElementById("total").innerHTML = precio + 400;
 }
+
 /*-------sweet alert---------*/
 function agregar(id) {
   fetch("../js/data.json")
@@ -74,11 +98,3 @@ function eliminar(id) {
 }
 /*----------------*/
 mostrarProductos();
-
-/*/Carrito ventana*/
-
-let cerrarCarrito = document.querySelectorAll("cerrarCarrito");
-
-cerrarCarrito.onclink = () => {
-  cerrarCarrito.remove("active");
-};

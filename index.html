@@ -12,6 +12,26 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Header -->
@@ -19,36 +39,227 @@
       <!-- Nav -->
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand"><h1 class="display-4 my-4 text-center">Tienda online</h1></a>
+          <a class="navbar-brand"
+            ><h1 class="display-4 my-4 text-center">Tienda online</h1></a
+          >
+          <button
+            type="button"
+            class="btn"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            <a class="navbar-brand" href="#">
+              <img
+                src="https://i.pinimg.com/originals/4b/a7/d8/4ba7d8d3c62e961494a50de2f61b2cc8.jpg"
+                alt=""
+                width="55"
+                height="40"
+              />
+              <span class="badge bg-secondary" id="valor">0</span>
+            </a>
+          </button>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="staticBackdrop"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="container-fluid">
+                    <div
+                      class="row d-flex justify-content-center align-items-center h-100"
+                    >
+                      <div class="col">
+                        <div class="card">
+                          <div class="card-body p-4">
+                            <div class="row">
+                              <div class="col-lg-7">
+                                <h5 class="mb-3">
+                                  <a href="#!" class="text-body"
+                                    ><i
+                                      class="fas fa-long-arrow-alt-left me-2"
+                                    ></i
+                                    >Continue shopping</a
+                                  >
+                                </h5>
+                                <hr />
 
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              <a class="navbar-brand" href="#">
-                <img src="https://i.pinimg.com/originals/4b/a7/d8/4ba7d8d3c62e961494a50de2f61b2cc8.jpg" alt="" width="55" height="40">
-              </a>  
-            </button>
-            <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          <div class="container">
-            <div
-              class="row d-flex flex-wrap justify-content-around p-3 border"
-              id="carrito"
-            ></div>
+                                <div
+                                  class="d-flex justify-content-between align-items-center mb-4"
+                                ></div>
+                                <div id="carrito"></div>
+                              </div>
+                              <div class="col-lg-5">
+                                <div
+                                  class="card bg-primary text-white rounded-3"
+                                >
+                                  <div class="card-body">
+                                    <div
+                                      class="d-flex justify-content-between align-items-center mb-4"
+                                    >
+                                      <h5 class="mb-0">Detalle de compra</h5>
+                                    </div>
+
+                                    <p class="small mb-2">Tarjeta</p>
+                                    <a
+                                      href="#!"
+                                      type="submit"
+                                      class="text-white"
+                                      ><i
+                                        class="fab fa-cc-mastercard fa-2x me-2"
+                                      ></i
+                                    ></a>
+                                    <a
+                                      href="#!"
+                                      type="submit"
+                                      class="text-white"
+                                      ><i class="fab fa-cc-visa fa-2x me-2"></i
+                                    ></a>
+                                    <a
+                                      href="#!"
+                                      type="submit"
+                                      class="text-white"
+                                      ><i class="fab fa-cc-amex fa-2x me-2"></i
+                                    ></a>
+                                    <a
+                                      href="#!"
+                                      type="submit"
+                                      class="text-white"
+                                      ><i class="fab fa-cc-paypal fa-2x"></i
+                                    ></a>
+
+                                    <form class="mt-4">
+                                      <div class="form-outline form-white mb-4">
+                                        <input
+                                          type="text"
+                                          id="typeName"
+                                          class="form-control form-control-lg"
+                                          siez="17"
+                                          placeholder="Cardholder's Name"
+                                        />
+                                        <label class="form-label" for="typeName"
+                                          >Nombre y Apellido</label
+                                        >
+                                      </div>
+
+                                      <div class="form-outline form-white mb-4">
+                                        <input
+                                          type="text"
+                                          id="typeText"
+                                          class="form-control form-control-lg"
+                                          siez="17"
+                                          placeholder="1234 5678 9012 3457"
+                                          minlength="19"
+                                          maxlength="19"
+                                        />
+                                        <label class="form-label" for="typeText"
+                                          >Número de tarjeta</label
+                                        >
+                                      </div>
+
+                                      <div class="row mb-4">
+                                        <div class="col-md-6">
+                                          <div class="form-outline form-white">
+                                            <input
+                                              type="text"
+                                              id="typeExp"
+                                              class="form-control form-control-lg"
+                                              placeholder="MM/YYYY"
+                                              size="7"
+                                              id="exp"
+                                              minlength="7"
+                                              maxlength="7"
+                                            />
+                                            <label
+                                              class="form-label"
+                                              for="typeExp"
+                                              >Vencimiento</label
+                                            >
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-outline form-white">
+                                            <input
+                                              type="password"
+                                              id="typeText"
+                                              class="form-control form-control-lg"
+                                              placeholder="&#9679;&#9679;&#9679;"
+                                              size="1"
+                                              minlength="3"
+                                              maxlength="3"
+                                            />
+                                            <label
+                                              class="form-label"
+                                              for="typeText"
+                                              >Cvv</label
+                                            >
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </form>
+
+                                    <hr class="my-4" />
+
+                                    <div class="d-flex justify-content-between">
+                                      <p class="mb-2">Subtotal</p>
+                                      <p class="mb-2" id="subtotal"></p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                      <p class="mb-2">Envío</p>
+                                      <p class="mb-2">$400</p>
+                                    </div>
+
+                                    <div
+                                      class="d-flex justify-content-between mb-4"
+                                    >
+                                      <p class="mb-2">Total</p>
+                                      <p class="mb-2" id="total">$0</p>
+                                    </div>
+
+                                    <button
+                                      type="button"
+                                      class="btn btn-info btn-block btn-lg"
+                                    >
+                                      <div
+                                        class="d-flex justify-content-between"
+                                      >
+                                        <span>$4818.00</span>
+                                        <span
+                                          >Checkout
+                                          <i
+                                            class="fas fa-long-arrow-alt-right ms-2"
+                                          ></i
+                                        ></span>
+                                      </div>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
-    </div>
-  </div>
-</div>
         </div>
       </nav>
     </header>
@@ -105,22 +316,26 @@
     </div>
     <!---------------->
     <div class="container">
-          <h2 class="display-4 my-4 text-center">Listado de productos</h2>
-          <div class="container">
-            <div
-              class="row d-flex flex-wrap justify-content-around p-3 border"
-              id="productos"
-            ></div>
-          </div>
-        </div>
+      <h2 class="display-4 my-4 text-center">Listado de productos</h2>
+      <div class="container">
+        <div
+          class="row d-flex flex-wrap justify-content-around p-3 border"
+          id="productos"
+        ></div>
       </div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/main.js"></script>
   </body>
+  <!---------------->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/main.js"></script>
+  <!-- MDB -->
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
+  ></script>
 </html>
