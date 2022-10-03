@@ -11,7 +11,7 @@ function mostrarProductos() {
               <h5 class="card-title">${productos.nombre}</h5>
               <p class="card-text">Marca: ${productos.marca}</p>
               <p class="card-text"> Categoria: ${productos.categoria}</p>
-              <p class="card-text"> Precio: ${productos.precio}</p>
+              <p class="card-text"> Precio: $ ${productos.precio}</p>
               <a href="#" class="btn btn-primary" onclick="agregar(${productos.id});">Agregar</a>
              </div>
        </div> `;
@@ -38,15 +38,13 @@ function mostrarCarro() {
             </div>
             <div class="ms-3">
               <h5>${carrito[i].nombre}</h5>
-              <p class="small mb-0">Marca: ${carrito[i].marca},  Categoria: ${carrito[i].categoria}</p>
+              <p class="small mb-0">Marca: ${carrito[i].marca}</p>
+              <p class="small mb-0">Categoría:${carrito[i].categoria}</p>
             </div>
           </div>
           <div class="d-flex flex-row align-items-center">
-            <div style="width: 50px;">
-              <h5 class="fw-normal mb-0">2</h5>
-            </div>
             <div style="width: 80px;">
-              <h5 class="mb-0"> Precio: ${carrito[i].precio}</h5>
+              <h6 class="mb-0"> Precio:$ ${carrito[i].precio}</h6>
             </div>
             <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt" onclick="eliminar(${i});""></i></a>
           </div>
@@ -60,7 +58,10 @@ function mostrarCarro() {
     (acc, i) => acc + i.precio,
     0
   );
-  document.getElementById("total").innerHTML = precio + 400;
+  document.getElementById("total").innerHTML = carrito.reduce(
+    (acc, i) => acc + i.precio,
+    400
+  );
 }
 
 /*-------sweet alert---------*/
@@ -70,6 +71,7 @@ function agregar(id) {
     .then((json) => {
       const encontrarProducto = json.find((item) => item.id == id);
       carrito.push(encontrarProducto);
+      addLocalStorage();
       Swal.fire({
         icon: "success",
         title: "Producto agregado al carro",
@@ -96,5 +98,15 @@ function eliminar(id) {
     }
   });
 }
+function addLocalStorage() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+window.onload = function () {
+  const storage = JSON.parse(localStorage.getItem("carrito"));
+  if (storage) {
+    carrito = storage;
+    mostrarCarro();
+  }
+};
 /*----------------*/
 mostrarProductos();

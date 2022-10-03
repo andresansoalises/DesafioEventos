@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,7 +11,6 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
     <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -20,11 +19,6 @@
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- MDB -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
       rel="stylesheet"
     />
     <!-- MDB -->
@@ -88,14 +82,7 @@
                           <div class="card-body p-4">
                             <div class="row">
                               <div class="col-lg-7">
-                                <h5 class="mb-3">
-                                  <a href="#!" class="text-body"
-                                    ><i
-                                      class="fas fa-long-arrow-alt-left me-2"
-                                    ></i
-                                    >Continue shopping</a
-                                  >
-                                </h5>
+                                <h5 class="mb-3">Detalle de la compra</h5>
                                 <hr />
 
                                 <div
@@ -111,7 +98,7 @@
                                     <div
                                       class="d-flex justify-content-between align-items-center mb-4"
                                     >
-                                      <h5 class="mb-0">Detalle de compra</h5>
+                                      <h5 class="mb-0">Identificación</h5>
                                     </div>
 
                                     <p class="small mb-2">Tarjeta</p>
@@ -149,13 +136,24 @@
                                           id="typeName"
                                           class="form-control form-control-lg"
                                           siez="17"
-                                          placeholder="Cardholder's Name"
+                                          placeholder="Nombre y Apellido"
                                         />
                                         <label class="form-label" for="typeName"
                                           >Nombre y Apellido</label
                                         >
                                       </div>
-
+                                      <div class="form-outline form-white mb-4">
+                                        <input
+                                          type="text"
+                                          id="typeName1"
+                                          class="form-control form-control-lg"
+                                          siez="17"
+                                          placeholder="Dirección"
+                                        />
+                                        <label class="form-label" for="typeName"
+                                          >Dirección</label
+                                        >
+                                      </div>
                                       <div class="form-outline form-white mb-4">
                                         <input
                                           type="text"
@@ -195,7 +193,7 @@
                                           <div class="form-outline form-white">
                                             <input
                                               type="password"
-                                              id="typeText"
+                                              id="typeText2"
                                               class="form-control form-control-lg"
                                               placeholder="&#9679;&#9679;&#9679;"
                                               size="1"
@@ -216,36 +214,29 @@
 
                                     <div class="d-flex justify-content-between">
                                       <p class="mb-2">Subtotal</p>
+                                      <i class="fa-thin fa-dollar-sign"></i>
                                       <p class="mb-2" id="subtotal"></p>
                                     </div>
 
                                     <div class="d-flex justify-content-between">
                                       <p class="mb-2">Envío</p>
-                                      <p class="mb-2">$400</p>
+                                      <i class="fa-thin fa-dollar-sign"></i>
+                                      <p class="mb-2">400</p>
                                     </div>
 
                                     <div
                                       class="d-flex justify-content-between mb-4"
                                     >
                                       <p class="mb-2">Total</p>
-                                      <p class="mb-2" id="total">$0</p>
+                                      <i class="fa-thin fa-dollar-sign"></i>
+                                      <p class="mb-2" id="total"></p>
                                     </div>
 
                                     <button
                                       type="button"
                                       class="btn btn-info btn-block btn-lg"
                                     >
-                                      <div
-                                        class="d-flex justify-content-between"
-                                      >
-                                        <span>$4818.00</span>
-                                        <span
-                                          >Checkout
-                                          <i
-                                            class="fas fa-long-arrow-alt-right ms-2"
-                                          ></i
-                                        ></span>
-                                      </div>
+                                      <span>Comprar</span>
                                     </button>
                                   </div>
                                 </div>
